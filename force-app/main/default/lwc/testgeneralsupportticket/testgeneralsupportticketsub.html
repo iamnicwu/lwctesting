@@ -1,0 +1,80 @@
+<template>
+
+    <div class="slds-scope">
+        <p class="slds-text-heading--label slds-m-bottom--small">
+            Ask Accounting Ticket
+        </p>
+
+        <div class="slds-form slds-form_stacked slds-form_horizontal slds-scrollable_y">
+            <div class="slds-grid slds-gutters_medium">
+                <div class="slds-col">
+
+                    <p class="slds-text-heading_small">{tickettypelabel}</p>
+                    <br/>
+                    
+                    <!-- Account type dropdown -->
+                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                        <div class="slds-col slds-grid slds-size_5-of-5">
+                            <div class="slds-col slds-size_2-of-5">
+                                <label class="slds-form-element__label">Account Type</label>
+                                <abbr class="slds-required" title="addNotesReq">* </abbr>
+                            </div>
+                            <div class="slds-col slds-size_2-of-5">
+                                <lightning-combobox name="accounttype" value={accounttypevalue} placeholder="None" options={accounttypeoptions} onchange={acccounttypedropdownHandler} ></lightning-combobox>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Urgent checkbox -->
+                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                        <div class="slds-col slds-grid slds-size_5-of-5">
+                            <div class="slds-col slds-size--2-of-5">
+                                <label class="slds-form-element__label" style="font-weight: bold;">Urgent?</label>
+                            </div>
+                            <div class="slds-col slds-size--2-of-5">
+                                <lightning-input type="checkbox" label="urgent" variant="label-hidden" onchange={urgenthandler}></lightning-input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description input -->
+                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                        <div class="slds-col slds-grid slds-size_5-of-5">
+                            <div class="slds-col slds-size--2-of-5">
+                                <label class="slds-form-element__label" style="font-weight: bold;">Description</label>
+                                <abbr class="slds-required" title="addNotesReq">*</abbr>
+                            </div>
+                            <div class="slds-col slds-size--2-of-5">
+                                <lightning-textarea name="descirpiotninput" variant="label-hidden" label="desciption" maxlength="255"></lightning-textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                        <div class="slds-col slds-grid slds-size_5-of-5">
+                            <div class="slds-col slds-size--2-of-5">
+                                <label class="slds-form-element__label">Attach Files (Optional)</label>
+                            </div>
+                            <div class="slds-col slds-size--2-of-5">
+                                <div class="slds-form-element__control">
+                                    <div class="slds-file-selector slds-file-selector_files">
+                                        <div class="slds-file-selector__dropzone">
+                                                <lightning-file-upload label="attachment" name="fileUploader" record-id={currentRecordId}
+                                                    onuploadfinished={uploadfilehandler} multiple> 
+                                                </lightning-file-upload>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-text-align--center">
+                        <button class="slds-button slds-button_neutral" onclick={nextHandler}>Back</button>
+                        <button class="slds-button slds-button_brand" onclick={submitHandler}>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

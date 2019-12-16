@@ -1,0 +1,20 @@
+.slds-text-heading_small{
+    font-style: italic; 
+    color: grey;
+    float: left;
+}
+.slds-text-heading--label{
+    font-size: 20px; 
+    text-align: center; 
+    margin: 30px;
+}
+.slds-form{
+    height:300px;
+}
+.slds-form-element__label{
+    font-weight: bold;
+}
+.slds-file-selector__dropzone{
+    width: 100px;
+    height: 100px;
+}

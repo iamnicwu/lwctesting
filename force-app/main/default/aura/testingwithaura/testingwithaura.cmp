@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+
+    <aura:attribute name="recordId" type="String"/>
+    <c:testgeneralsupportticket recordId="{!v.recordId}"/>
+
+</aura:component>

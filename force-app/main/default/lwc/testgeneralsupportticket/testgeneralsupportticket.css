@@ -1,0 +1,27 @@
+.slds-button{
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.slds-text-heading--label{
+    font-size: 20px; 
+    text-align: center; 
+    margin: 30px;
+}
+.slds-m-around_medium{
+    width: 160px;
+    height: 160px;
+    text-align: center; 
+    display: inline-block;
+}
+
+.slds-form-element__label{
+    margin: 1px;
+}
+.slds-m-left_x-lager{
+    width: 100px;
+    height: 100px;
+}
+.slds-button{
+    font-size: 12px; 
+}

@@ -1,0 +1,22 @@
+<template>
+
+    <div class="slds-scope">
+
+        <p class="slds-text-heading--label slds-m-bottom--small">
+            Ask Accounting Ticket
+        </p>
+        RecordId: {currentRecordId}
+        
+        <div class="slds-m-around_medium">
+            <img src={aatlogo}>
+        </div>
+
+        <div class="slds-form-element">
+            <lightning-combobox name="tickettype" value={tickettypevalue} label="Please choose a ticket type:" placeholder="None" options={tickettypeoptions} onchange={tickettypedropdownHandler} ></lightning-combobox>
+            </br>
+            <div class="slds-text-align--center">
+                <button class="slds-button slds-button_brand" onclick={nextHandler}>Next</button>
+            </div>
+        </div>
+    </div>
+</template>
