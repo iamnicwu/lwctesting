@@ -18,6 +18,9 @@ jobs:
     steps:
       - checkout
       - run:
+        name: Download and Unzip Ant
+        command: wget "https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_47.0.zip"; unzip salesforce_ant_47.0.zip
+      - run:
           name: "deployCodeCheckOnly"
           command: |
-            /lib/ant deployCodeCheckOnly
+            ./ant deployCodeCheckOnly
