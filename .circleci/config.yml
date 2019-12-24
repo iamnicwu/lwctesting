@@ -1,4 +1,21 @@
-test:
-  override:
-    - ant -lib lib/ Build:
-        timeout: 600
+version: 2
+jobs:
+  build:
+    environment:
+      ## build.properties
+      - sf.username: iamnicwu@163.com
+      - sf.password: Abc123456qVSjFrNMHmitpwqxlT3AbK7B
+      - sf.serverurl: https://login.salesforce.com
+      - sf.maxPoll: 600
+      ## settings to change in branch properties
+      ## copy the build.master.properties to build.[branch].properties
+      - sf.runallTests: true
+      - sf.checkOnly: true
+      - build.cmd: RunLocalTests
+      - DEPLOYDIR: force-app\main\default\classes
+    steps:
+      - checkout
+      - run:
+          name: "deployCodeCheckOnly"
+          command: |
+            Ant deployCodeCheckOnly
