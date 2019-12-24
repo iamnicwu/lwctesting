@@ -1,4 +1,4 @@
-<project name="Tkww Salesforce UAT" default="test" basedir="." 
+<project name="Tkww Salesforce UAT" default="deployCodeCheckOnly" basedir="." 
   xmlns:sf="antlib:com.salesforce">
 
   <property file="build.uat.properties"/>
