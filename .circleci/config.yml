@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/node:latest
     environment:
       ## build.properties
       - sf.username: iamnicwu@163.com
