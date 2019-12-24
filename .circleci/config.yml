@@ -28,4 +28,4 @@ jobs:
       - run:
           name: "DeployCodeCheckOnly"
           command: |
-            cd ./sfdx/; ant deployCodeCheckOnly
+            cd ./sfdx/salesforce_ant_47.0/; ant deployCodeCheckOnly
