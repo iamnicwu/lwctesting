@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-      - image: llyrjones/salesforce-ant:latest
     environment:
       ## build.properties
       - sf.username: iamnicwu@163.com
@@ -22,10 +21,10 @@ jobs:
           name: "create sfdx folder"
           command: |
             mkdir sfdx
-      # - run:
-      #     name: "Download and Unzip Ant"
-      #     command: |
-      #       wget "https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_47.0.zip"; unzip salesforce_ant_47.0.zip -d sfdx
+      - run:
+          name: "Download and Unzip Ant"
+          command: |
+            wget "https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_47.0.zip"; unzip salesforce_ant_47.0.zip -d sfdx
       - run:
           name: "DeployCodeCheckOnly"
           command: |
