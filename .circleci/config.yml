@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-      - image: abhisheksaxena7/salesforcedockerimg
+      - image: abhisheksaxena7/salesforcedockerimg:latest
     environment:
       ## build.properties
       - sf.username: iamnicwu@163.com
