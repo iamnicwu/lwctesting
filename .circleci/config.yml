@@ -16,8 +16,8 @@ jobs:
       - build.cmd: RunLocalTests
       - DEPLOYDIR: force-app\main\default\classes
     steps:
-      - start now
+      - checkout
       - run:
-          name: "DeployCodeCheckOnly"
+          name: "deployCode"
           command: |
             ant -buildfile lib/build.xml
