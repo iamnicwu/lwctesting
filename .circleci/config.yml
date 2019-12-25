@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: mklinski/salesforce
+      - image: mklinski/salesforce:latest
     environment:
       ## build.properties
       - sf.username: iamnicwu@163.com
