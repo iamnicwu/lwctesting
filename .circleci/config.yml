@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+      - image: mklinski/salesforce
     environment:
       ## build.properties
       - sf.username: iamnicwu@163.com
@@ -25,11 +26,11 @@ jobs:
           name: "Download and Unzip Ant"
           command: |
             wget "https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_47.0.zip"; unzip salesforce_ant_47.0.zip -d sfdx
-      - run:
-          name: "set environment"
-          command: |
-            ENV ANT_HOME /usr/share/java/apache-ant
-            ENV PATH $PATH:$ANT_HOME/bin
+      # - run:
+      #     name: "set environment"
+      #     command: |
+      #       ENV ANT_HOME /usr/share/java/apache-ant
+      #       ENV PATH $PATH:$ANT_HOME/bin
       - run:
           name: "DeployCodeCheckOnly"
           command: |
